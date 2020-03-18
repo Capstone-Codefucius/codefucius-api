@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using codefucius_api.Models;
 
 namespace codefucius_api
 {
@@ -25,6 +27,12 @@ namespace codefucius_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ReviewContext>(options =>
+            {
+                options.UseNpgsql(Configuration.GetSection("DatabaseConfig")["PostgresSQL"]);
+            });
+
+            // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddControllers();
         }
 
