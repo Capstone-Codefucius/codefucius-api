@@ -2,14 +2,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace codefucius_api.Models
 {
-    public class ReviewContext : DbContext
+    public class DataContext : DbContext
     {
-        public ReviewContext(DbContextOptions<ReviewContext> options)
+        public DataContext(DbContextOptions<DataContext> options)
             : base(options)
         {
         }
 
         public DbSet<Review> Reviews { get; set; }
-        
+
+        public DbSet<User> Users { get; set; }
     }
 }

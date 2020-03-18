@@ -13,9 +13,9 @@ namespace codefucius_api.Controllers
     [ApiController]
     public class ReviewController : ControllerBase
     {
-        private readonly ReviewContext _context;
+        private readonly DataContext _context;
 
-        public ReviewController(ReviewContext context)
+        public ReviewController(DataContext context)
         {
             _context = context;
         }
