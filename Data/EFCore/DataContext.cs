@@ -1,6 +1,7 @@
+using codefucius_api.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace codefucius_api.Models
+namespace codefucius_api.Data
 {
     public class DataContext : DbContext
     {

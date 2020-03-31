@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using codefucius_api.Models;
+using codefucius_api.Data;
 
 namespace codefucius_api.Controllers
 {
@@ -12,6 +13,9 @@ namespace codefucius_api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        // repo instead of context
+        // look into view models
+        
         private readonly DataContext _context;
 
         public UserController(DataContext context)
