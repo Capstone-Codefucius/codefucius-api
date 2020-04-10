@@ -1,9 +1,10 @@
+using codefucius_api.Data;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace codefucius_api.Models
 {
-    public class User
+    public class User : IEntity
     {
         [Key]
         public Guid ID { get; set; }
