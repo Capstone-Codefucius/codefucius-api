@@ -10,5 +10,6 @@ namespace codefucius_api.Models
         public Guid ID { get; set; }
 
         public string name { get; set; }
+        public string role { get; set; }
     }
 }
