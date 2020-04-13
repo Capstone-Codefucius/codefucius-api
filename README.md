@@ -42,12 +42,6 @@ Replace the user id and password where necessay.  This is needed to connect to t
 
 ## Database Migration
 
-Now the Database tables need to be created.  We can create our tables using the following commands:
-
-`dotnet ef migrations add initial` 
-
-* Note: It was called initial here for now, but future migrations will need a new name
-
 `dotnet ef database update`
 
 Here, the first command is building a schema from the models that are defined in the code.  The second command then applies this to the database.
