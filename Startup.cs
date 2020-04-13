@@ -39,7 +39,7 @@ namespace codefucius_api
             }); 
             services.AddScoped<EfCoreReviewRepository>();
             services.AddScoped<EfCoreUserRepository>();
-
+            services.AddScoped<EfCoreFeedbackRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
