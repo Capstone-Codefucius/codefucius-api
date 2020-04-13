@@ -10,6 +10,8 @@ namespace codefucius_api.Controllers
     {
         public ReviewsController(EfCoreReviewRepository repository) : base(repository)
         {
+            System.Console.WriteLine(repository.GetAll().Result);
+
             if(repository.GetAll().Result.Count == 0)
             {
                 CreateDummyReviews(repository);
@@ -25,6 +27,7 @@ namespace codefucius_api.Controllers
             review1.Title = "Test 1";
             review1.Description = "This is a test";
             review1.Status = "In-progress";
+            repository.Add(review1).Wait();
 
             Review review2 = new Review();
             review2.AuthorID = new System.Guid("36ed6c92-4e80-44a2-97c2-9238235d22a7");
@@ -33,6 +36,7 @@ namespace codefucius_api.Controllers
             review2.Title = "Test 2";
             review2.Description = "Another test!";
             review2.Status = "Awaiting";
+            repository.Add(review2).Wait();
 
             Review review3 = new Review();
             review3.AuthorID = new System.Guid("650cfb89-e700-410a-896b-868d52d5ff94");
@@ -41,6 +45,7 @@ namespace codefucius_api.Controllers
             review3.Title = "Test 3";
             review3.Description = "More test! I'm sad";
             review3.Status = "In-progress";
+            repository.Add(review3).Wait();
 
             Review review4 = new Review();
             review4.AuthorID = new System.Guid("69cfbbe2-7bf5-4892-9493-61b73f52b731");
@@ -49,6 +54,7 @@ namespace codefucius_api.Controllers
             review4.Title = "Test 4";
             review4.Description = "Please stop!";
             review4.Status = "Awaiting";
+            repository.Add(review4).Wait();
         }
     }
 }
