@@ -28,7 +28,15 @@ namespace codefucius_api
 
             // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddControllers();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                    .SetIsOriginAllowed((host) => true)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            }); 
             services.AddScoped<EfCoreReviewRepository>();
             services.AddScoped<EfCoreUserRepository>();
 
@@ -47,7 +55,7 @@ namespace codefucius_api
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
