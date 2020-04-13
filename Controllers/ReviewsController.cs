@@ -10,8 +10,6 @@ namespace codefucius_api.Controllers
     {
         public ReviewsController(EfCoreReviewRepository repository) : base(repository)
         {
-            System.Console.WriteLine(repository.GetAll().Result);
-
             if(repository.GetAll().Result.Count == 0)
             {
                 CreateDummyReviews(repository);
