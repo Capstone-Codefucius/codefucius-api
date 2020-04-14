@@ -24,7 +24,7 @@ namespace codefucius_api.Controllers
             review1.Deadline = System.DateTime.Now;
             review1.Title = "Test 1";
             review1.Description = "This is a test";
-            review1.Status = "In-progress";
+            review1.Status = "Completed";
             repository.Add(review1).Wait();
 
             Review review2 = new Review();
