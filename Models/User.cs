@@ -11,5 +11,6 @@ namespace codefucius_api.Models
 
         public string name { get; set; }
         public string role { get; set; }
+        public double reviewHours { get; set; }
     }
 }

@@ -42,9 +42,19 @@ Replace the user id and password where necessay.  This is needed to connect to t
 
 ## Database Migration
 
-`dotnet ef database update`
+The EF Core CLI tool is needed for this step, which can be installed with the following command:
 
-Here, the first command is building a schema from the models that are defined in the code.  The second command then applies this to the database.
+`dotnet tool install --global dotnet-ef`
+
+First, you need to make a migration to create a schema for the database:
+
+`dotnet ef migrations add initial`
+
+This needs to be done whenever the models are changed.  Replace intial with whatever you want to name the migration.
+
+Finally, apply this schema to the database with the following command.
+
+`dotnet ef database update`
 
 # Running the API
 

@@ -21,21 +21,25 @@ namespace codefucius_api.Controllers
             User user1 = new User();
             user1.name = "Greg Mann";
             user1.role = "Reviewee";
+            user1.reviewHours = 3.5;
             repository.Add(user1).Wait();
 
             User user2 = new User();
             user2.name = "Darwin Fish";
             user2.role = "Reviewer";
+            user2.reviewHours = 2.0;
             repository.Add(user2).Wait();
 
             User user3 = new User();
             user3.name = "Bilbo Baggins";
             user3.role = "Reviewee";
+            user3.reviewHours = 5.5;
             repository.Add(user3).Wait();
 
             User user4 = new User();
             user4.name = "Man dude";
             user4.role = "Reviewer";
+            user4.reviewHours = 0;
             repository.Add(user4).Wait();
         }
     }

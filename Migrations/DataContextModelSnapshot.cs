@@ -86,6 +86,9 @@ namespace codefucius_api.Migrations
                     b.Property<string>("name")
                         .HasColumnType("text");
 
+                    b.Property<double>("reviewHours")
+                        .HasColumnType("double precision");
+
                     b.Property<string>("role")
                         .HasColumnType("text");
 
