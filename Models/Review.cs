@@ -9,7 +9,7 @@ namespace codefucius_api.Models
         [Key]
         public Guid ID { get; set; }
 
-        public Guid AuthorID { get; set; }
+        public string AuthorName { get; set; }
         
         public string Title { get; set; }
 
